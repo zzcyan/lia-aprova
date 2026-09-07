@@ -88,6 +88,15 @@
 <!-- MODULOS:FIM -->
 <script src="app.js"></script>
 <script>
+// se a folha de estilo não veio (troca de versão no meio do caminho), recarrega uma única vez
+window.addEventListener('load', function () {
+  try {
+    var topo = document.getElementById('topo');
+    var semCss = topo && getComputedStyle(topo).position !== 'sticky';
+    if (semCss && !sessionStorage.getItem('liaRecarregou')) { sessionStorage.setItem('liaRecarregou', '1'); location.reload(); }
+    else if (!semCss) { sessionStorage.removeItem('liaRecarregou'); }
+  } catch (e) {}
+});
 // service worker só no site publicado (HTTPS); no servidor local não, para não guardar cache velho
 if ('serviceWorker' in navigator && location.hostname !== 'localhost' && location.hostname !== '127.0.0.1') {
   window.addEventListener('load', function () { navigator.serviceWorker.register('sw.js').catch(function () {}); });
