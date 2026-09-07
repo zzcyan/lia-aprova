@@ -131,28 +131,6 @@ code { font-family: var(--corpo); background: var(--lilas); padding: 1px 6px; bo
   min-width: 0;
 }
 
-@media (max-width: 900px) {
-  /* celular e tablet: a trilha vira uma faixa horizontal rolável de pílulas, e o conteúdo vem logo abaixo */
-  #layout { flex-direction: column; }
-  #trilha {
-    width: 100%; height: auto; position: static; border-right: 0; border-bottom: 1px solid var(--borda);
-    display: flex; gap: 6px; padding: 8px 10px; overflow-x: auto; overflow-y: hidden; white-space: nowrap;
-    -webkit-overflow-scrolling: touch; scrollbar-width: none;
-  }
-  #trilha::-webkit-scrollbar { display: none; }
-  .trilha-bloco { display: flex; gap: 6px; margin: 0; }
-  .trilha-titulo { display: none; }
-  .trilha-item { flex: 0 0 auto; padding: 5px 10px 5px 6px; border: 1px solid var(--borda); background: var(--branco); border-radius: 999px; font-size: 0.8rem; gap: 6px; }
-  .trilha-item:hover { transform: none; }
-  .trilha-item.ativo { border-color: var(--rosa); background: var(--rosa-bebe); }
-  .trilha-nome { max-width: 150px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-  .trilha-prog { display: none; }
-  .pino { width: 22px; height: 22px; font-size: 0.8rem; }
-  #palco { padding: 18px 14px 80px; }
-  #topo { padding: 8px 12px; gap: 8px; }
-  .marca { font-size: 1.2rem; white-space: nowrap; flex-shrink: 0; }
-  .topo-info { font-size: 0.72rem; text-align: right; line-height: 1.25; max-width: 60%; }
-}
 
 /* ---------- trilha (sidebar) ---------- */
 
@@ -665,3 +643,27 @@ code { font-family: var(--corpo); background: var(--lilas); padding: 1px 6px; bo
 .backup-codigo { width: 100%; font-family: var(--corpo); font-size: 0.8rem; color: var(--texto-2); background: var(--creme); border: 2px solid var(--borda); border-radius: var(--raio-p); padding: 10px 12px; resize: vertical; outline: none; word-break: break-all; }
 .backup-codigo:focus { border-color: var(--rosa); }
 .instalar-dica { margin-top: 12px; padding-top: 10px; border-top: 1px dashed var(--borda); }
+
+/* ---------- celular e tablet (fica no fim para vencer as regras gerais) ---------- */
+@media (max-width: 900px) {
+  /* celular e tablet: a trilha vira uma faixa horizontal rolável de pílulas, e o conteúdo vem logo abaixo */
+  #layout { flex-direction: column; }
+  #trilha {
+    width: 100%; height: auto; position: static; border-right: 0; border-bottom: 1px solid var(--borda);
+    display: flex; gap: 6px; padding: 8px 10px; overflow-x: auto; overflow-y: hidden; white-space: nowrap;
+    -webkit-overflow-scrolling: touch; scrollbar-width: none;
+  }
+  #trilha::-webkit-scrollbar { display: none; }
+  .trilha-bloco { display: flex; gap: 6px; margin: 0; }
+  .trilha-titulo { display: none; }
+  .trilha-item { flex: 0 0 auto; padding: 5px 10px 5px 6px; border: 1px solid var(--borda); background: var(--branco); border-radius: 999px; font-size: 0.8rem; gap: 6px; }
+  .trilha-item:hover { transform: none; }
+  .trilha-item.ativo { border-color: var(--rosa); background: var(--rosa-bebe); }
+  .trilha-nome { max-width: 150px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .trilha-prog { display: none; }
+  .pino { width: 22px; height: 22px; font-size: 0.8rem; }
+  #palco { padding: 18px 14px 80px; }
+  #topo { padding: 8px 12px; gap: 8px; }
+  .marca { font-size: 1.2rem; white-space: nowrap; flex-shrink: 0; }
+  .topo-info { font-size: 0.72rem; text-align: right; line-height: 1.25; max-width: 60%; }
+}
