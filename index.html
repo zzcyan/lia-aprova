@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lia Aprova ♥</title>
+<meta name="description" content="Cantinho de estudos da Lia para a UEL, a Prova Paraná e a UniFil.">
+<meta name="theme-color" content="#E0559B">
+<link rel="manifest" href="manifest.json">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Lia Aprova">
+<link rel="apple-touch-icon" href="icones/icone-180.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23E0559B' d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+
+<div class="deco deco-a">♥</div>
+<div class="deco deco-b">♥</div>
+<div class="deco deco-c">♡</div>
+
+<header id="topo">
+  <div class="marca" onclick="irPara('home')">
+    <span class="marca-nome">Lia Aprova</span><span class="marca-coracao">♥</span>
+  </div>
+  <div class="topo-info">
+    <span id="topo-contagem"></span>
+  </div>
+</header>
+
+<div id="layout">
+  <nav id="trilha"></nav>
+  <main id="palco"></main>
+</div>
+
+<script src="conteudo/00-config.js"></script>
+<!-- MODULOS:INICIO -->
+<script src="conteudo/d00-estrategia.js"></script>
+<script src="conteudo/d01-redacao.js"></script>
+<script src="conteudo/d02-literatura.js"></script>
+<script src="conteudo/d03-portugues.js"></script>
+<script src="conteudo/d04-ingles.js"></script>
+<script src="conteudo/d05-artes.js"></script>
+<script src="conteudo/d06-biologia.js"></script>
+<script src="conteudo/d07-quimica.js"></script>
+<script src="conteudo/d08-fisica.js"></script>
+<script src="conteudo/d09-matematica.js"></script>
+<script src="conteudo/d10-historia.js"></script>
+<script src="conteudo/d11-geografia.js"></script>
+<script src="conteudo/d12-filosofia.js"></script>
+<script src="conteudo/d13-sociologia.js"></script>
+<script src="conteudo/d14-prova-parana.js"></script>
+<script src="conteudo/pratica/artes.js"></script>
+<script src="conteudo/pratica/biologia.js"></script>
+<script src="conteudo/pratica/estrategia.js"></script>
+<script src="conteudo/pratica/filosofia.js"></script>
+<script src="conteudo/pratica/fisica.js"></script>
+<script src="conteudo/pratica/geografia.js"></script>
+<script src="conteudo/pratica/historia.js"></script>
+<script src="conteudo/pratica/ingles.js"></script>
+<script src="conteudo/pratica/literatura.js"></script>
+<script src="conteudo/pratica/matematica.js"></script>
+<script src="conteudo/pratica/portugues.js"></script>
+<script src="conteudo/pratica/prova-parana.js"></script>
+<script src="conteudo/pratica/quimica.js"></script>
+<script src="conteudo/pratica/redacao.js"></script>
+<script src="conteudo/pratica/sociologia.js"></script>
+<script src="conteudo/missoes/artes.js"></script>
+<script src="conteudo/missoes/biologia.js"></script>
+<script src="conteudo/missoes/estrategia.js"></script>
+<script src="conteudo/missoes/filosofia.js"></script>
+<script src="conteudo/missoes/fisica.js"></script>
+<script src="conteudo/missoes/geografia.js"></script>
+<script src="conteudo/missoes/historia.js"></script>
+<script src="conteudo/missoes/ingles.js"></script>
+<script src="conteudo/missoes/literatura.js"></script>
+<script src="conteudo/missoes/matematica.js"></script>
+<script src="conteudo/missoes/portugues.js"></script>
+<script src="conteudo/missoes/prova-parana.js"></script>
+<script src="conteudo/missoes/quimica.js"></script>
+<script src="conteudo/missoes/redacao.js"></script>
+<script src="conteudo/missoes/sociologia.js"></script>
+<!-- MODULOS:FIM -->
+<script src="app.js"></script>
+<script>
+// service worker só no site publicado (HTTPS); no servidor local não, para não guardar cache velho
+if ('serviceWorker' in navigator && location.hostname !== 'localhost' && location.hostname !== '127.0.0.1') {
+  window.addEventListener('load', function () { navigator.serviceWorker.register('sw.js').catch(function () {}); });
+}
+</script>
+</body>
+</html>
